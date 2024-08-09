@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.urls import include, path, re_path
+from django.urls import include, path
 from django.contrib import admin
 
 from wagtail.admin import urls as wagtailadmin_urls
@@ -36,5 +36,4 @@ urlpatterns = urlpatterns + [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('search/', search_views.search, name='search'),
-    re_path(r'^', include(wagtail_urls)),
 ]
